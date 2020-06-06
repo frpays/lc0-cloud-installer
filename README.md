@@ -56,7 +56,7 @@ info depth 2 seldepth 3 time 2879 nodes 5 score cp 14 nps 2 tbhits 0 pv e2e4 e7e
 Stop you instance and edit its characteritics.
 Add one or two GPU, up to 8 V100. 
 Make sure you have 2 vcpu per GPU.
-You will need about 16Gb of memory. Make it 32bg to be confortable.
+You will need about 20Gb of memory. Make it 32gb to be confortable.
 
 *Careful: with GPU, the instance is considerably more expensive.*
 *Each V100 is billed about $2.5 per hour at the moment.*
@@ -143,12 +143,14 @@ info depth 18 seldepth 56 time 7671 nodes 250858 score cp 11 nps 62155 tbhits 0 
 
 ### 6.2 Windows
 
-Use PuTTY, as explained here:
+Use PuTTY to create you script, as explained here:
 
 http://komodochess.com/remote-engine.htm
 
 
+### 7. Setup you remote engine into you favorite UCI client
 
+You will need to select the `remove_engine` script that you created.
 
 
 
