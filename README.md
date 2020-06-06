@@ -6,9 +6,11 @@ The most up-to-date version of [Lc0](https://github.com/LeelaChessZero/lc0) will
 
 ## 1. Setup a Google cloud account 
 
-https://console.cloud.google.com/
+Head to [Google Cloud](https://console.cloud.google.com/) and setup an account.
+New accounts are offered free credits.
 
-Create a ssh key and add you public key to your account.
+You will also need to setup a ssh key on your account.
+
 
 ## 2. Create a project and new instance
 
@@ -16,13 +18,17 @@ Setup a small instance during the installation:
 
 - 1 vcpu, 3.75Gb memory, (you will need to bump this later),
 - 20 Gb of disk minimum,
-- with Ubuntu 18.04LTS.
+- Ubuntu 18.04LTS,
+- No GPU (for the moment).
 
 Start you instance and login.
 
-  *Note*: You will be billed for this instance ($0.034 hourly the momebt).
+*Note:* You may be billed for this instance (about $0.034 hourly).
+
 
 ## 3. Install LC0 using the provided installer
+
+Clone the provided installer and launch it.
 
 ```
 $ git clone https://github.com/frpays/lc0-cloud-installer.git
@@ -42,11 +48,10 @@ Saving to: ‘256x20-t40-1541.pb.gz’
 
 2020-06-06 17:35:33 (471 KB/s) - ‘256x20-t40-1541.pb.gz’ saved [44289015/44289015]
 ````
-This will take about 15 minutes while CUDA, CUDNN is installed and LC0 is built from the latest tag.
+This will take about 15 minutes. CUDA and CUDNN are installed and LC0 is built from the latest tag.
+The installer will also download a 256x20b network (256x20-t40-1541.pb.gz from https://lczero.org/play/networks/bestnets/).
 
-It will also install a 256x20b network (256x20-t40-1541.pb.gz from https://lczero.org/play/networks/bestnets/).
-
-At the end of the intaller you can optionaly test your engine.
+When the installer completed, you can optionaly test your engine.
 Without GPUs, the engine will fallback to CPU.
 
 ```
@@ -67,21 +72,21 @@ info depth 2 seldepth 3 time 2879 nodes 5 score cp 14 nps 2 tbhits 0 pv e2e4 e7e
 ## 4. Add GPUs to you instance.
 
 Stop you instance and edit its characteritics.
-Add one or two GPU, up to 8 V100. 
-Make sure you have 2 vcpu per GPU.
+Add one or two GPU, up to 8 V100. Make sure you have 2 vcpus per GPU.
 You will need about 20Gb of memory. Make it 32gb to be confortable.
 
-*Careful: with GPU, the instance is considerably more expensive.*
-*Each V100 is billed about $2.5 per hour at the moment.*
+*Careful: every GPU makes the instance considerably more expensive.*
+*Each V100 is billed about $2.5 per hour at the time of writing.*
 
-See https://cloud.google.com/compute/gpus-pricing for GPU pricing details.
+See [the Google Gloud GPU pricing] (https://cloud.google.com/compute/gpus-pricing) for details.
 
 **Don't forget to stop your instance when you finished!**
+
 
 ## 5. Test your instance
 
 The `engine` script will automatically use your GPUs, if any.
-Here with one V100:
+Here is Lc0 starting with one V100:
 
 ```
 $ ~/engine
@@ -104,6 +109,10 @@ info depth 22 seldepth 62 time 29845 nodes 1485568 score cp 11 nps 53922 tbhits 
 ```
 
 ## 6. Setup you engine remotely from you laptop or desktop. 
+
+Although this is not required, it's highly recommended to setup a static address. 
+The static address is free, as long as it is used in a instance. 
+The instance can keep it's static address even if stopped.
 
 ### 6.1 MacOS and Linux
 
@@ -164,7 +173,6 @@ http://komodochess.com/remote-engine.htm
 ### 7. Setup you remote engine into you favorite UCI client
 
 You will need to select the `remove_engine` script that you created.
-
 
 ### Appendix:  Installed software versions
 
