@@ -5,9 +5,9 @@ An up-to-date version of [Lc0](https://github.com/LeelaChessZero/lc0) will be in
 ## 1. Setup a Google cloud account 
 
 Visit [Google Cloud](https://console.cloud.google.com/) and setup an account.
-Note that new accounts are offered free credits.
+Note that free trial accounts are offered free credits ($300 at the time of writing).
 
-You will also need to setup a ssh key on your account.
+You will also need to setup a ssh key on your Google Cloud account.
 
 
 ## 2. Create a project and new instance
