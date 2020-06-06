@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 LC0=~/lc0/lc0
 WEIGHTS=~/weights/default
 CACHE_SIZE=2000000
@@ -18,8 +17,32 @@ case "$GPU_COUNT" in
 	exec $LC0 -t 4 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
 	;;
 
+	3*)
+	exec $LC0 -t 6 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1),(backend=cudnn-fp16,gpu=2)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+	;;
+
+	4*)
+	exec $LC0 -t 8 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1),(backend=cudnn-fp16,gpu=2),(backend=cudnn-fp16,gpu=3)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+	;;
+
+	5*)
+	exec $LC0 -t 10 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1),(backend=cudnn-fp16,gpu=2),(backend=cudnn-fp16,gpu=3),(backend=cudnn-fp16,gpu=4)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+	;;
+
+	6*)
+	exec $LC0 -t 12 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1),(backend=cudnn-fp16,gpu=2),(backend=cudnn-fp16,gpu=3),(backend=cudnn-fp16,gpu=4),(backend=cudnn-fp16,gpu=5)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+	;;
+
+	7*)
+	exec $LC0 -t 14 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1),(backend=cudnn-fp16,gpu=2),(backend=cudnn-fp16,gpu=3),(backend=cudnn-fp16,gpu=4),(backend=cudnn-fp16,gpu=5),(backend=cudnn-fp16,gpu=6)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+  ;;
+
+	8*)
+	exec $LC0 -t 16 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1),(backend=cudnn-fp16,gpu=2),(backend=cudnn-fp16,gpu=3),(backend=cudnn-fp16,gpu=4),(backend=cudnn-fp16,gpu=5),(backend=cudnn-fp16,gpu=6),(backend=cudnn-fp16,gpu=7)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+  ;;
+
 	*)
-	exec $LC0 -t 4 --weights=$WEIGHTS --backend=eigen --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE$*
+	exec $LC0 --weights=$WEIGHTS --backend=eigen --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE$*
 	;;
 
 esac
