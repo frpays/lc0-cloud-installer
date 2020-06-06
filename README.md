@@ -108,7 +108,7 @@ info depth 22 seldepth 62 time 29845 nodes 1485568 score cp 11 nps 53922 tbhits 
 
 ## 6. Connect remotely to your engine from your laptop
 
-Although this is not required, it's highly recommended to setup a static address on the instance.
+Although this is not required, it's highly recommended to [setup a static address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address?hl=en) on the instance.
 The static address is free, as long as it is attached to an instance. 
 The instance is allowed to keep its static address freely, even stopped.
 
