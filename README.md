@@ -1,4 +1,4 @@
-# LCZero Google cloud installer
+# LCZero Google Cloud installer
 
 ### This project explains how install Leela Chess Zero on Google cloud.
 
@@ -12,8 +12,9 @@ Create a ssh key and add you public key to your account.
 
 ## 2. Create a project and new instance
 
-Setup a small instance :
-- 1vcpu, 3.75Gb memory, (you will need to bump this later),
+Setup a small instance during the installation:
+
+- 1 vcpu, 3.75Gb memory, (you will need to bump this later),
 - 20 Gb of disk minimum,
 - with Ubuntu 18.04LTS.
 
@@ -165,13 +166,11 @@ http://komodochess.com/remote-engine.htm
 You will need to select the `remove_engine` script that you created.
 
 
-### 8. Installed software versions
+### Appendix:  Installed software versions
 
-Ubuntu 18.04LTS
-CUDA 10.2
-Cudnn 7.6.5
-Leela v0.25.1
-
-
+* Ubuntu 18.04LTS
+* CUDA 10.2
+* Cudnn 7.6.5
+* Leela v0.25.1
 
 
