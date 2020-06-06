@@ -17,11 +17,12 @@ install_cuda()
 install_cudnn()
 {
 	echo "Installing CUDNN"
-	wget -nc http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.0-linux-x64-v7.1.tgz
-	tar -xzvf cudnn-9.0-linux-x64-v7.1.tgz
+  wget -nc http://developer.download.nvidia.com/compute/redist/cudnn/v7.6.5/cudnn-10.2-linux-x64-v7.6.5.32.tgz
+	tar -xzvf cudnn-10.2-linux-x64-v7.6.5.32.tgz
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include/cudnn.h
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64/
 	sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+  rm -f cuda cudnn-10.2-linux-x64-v7.6.5.32.tgz
 	sudo nvidia-smi -pm 1
 }
 
@@ -53,6 +54,7 @@ install_weights()
   mkdir -p weights 
   cd weights
   wget -nc $WEIGHTS
+  ln -sf 256x20-t40-1541.pb.gz default
 }
 
 

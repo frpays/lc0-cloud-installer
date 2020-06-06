@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+LC0=~/lc0/lc0
+WEIGHTS=~/weights/default
+
+BACKEND=$1; shift
+
+case "$BACKEND" in
+
+gpu|gpu-1)
+exec $LC0 -t 4 --weights=$WEIGHTS --backend=cudnn-fp16  --nncache=6000000 --minibatch-size=512 $*
+;;
+
+gpu-2)
+exec $LC0 -t 4 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1)' --nncache=6000000 --minibatch-size=512 $*
+;;
+
+*)
+exec $LC0 -t 4 --weights=$WEIGHTS --backend=eigen $*
+;;
+
+esac
+
