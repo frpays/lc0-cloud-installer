@@ -10,11 +10,11 @@ Note that free trial accounts are offered free credits ($300 at the time of writ
 You will also need to setup a ssh key on your Google Cloud account.
 
 
-## 2. Create a project and new instance
+## 2. Create a project and a new instance
 
 Setup a small instance during the installation:
 
-- 1 vcpu, 3.75Gb memory, (you will need to bump this later),
+- 1 vcpu, 3.75Gb memory, (we will bump this later),
 - 20 Gb of disk minimum,
 - Ubuntu 18.04LTS,
 - No GPU (for the moment).
@@ -57,13 +57,14 @@ Without GPUs, the engine will fallback to CPU.
        _
 |   _ | |
 |_ |_ |_| v0.25.1+git.69105b4 built Jun  6 2020
-go nodes 100
+go
 Loading weights file from: /home/frpays/weights/default
 Creating backend [eigen]...
 Using Eigen version 3.3.5
 Eigen max batch size is 256.
 info depth 1 seldepth 2 time 1956 nodes 3 score cp 15 nps 3 tbhits 0 pv e2e4 e7e5
 info depth 2 seldepth 3 time 2879 nodes 5 score cp 14 nps 2 tbhits 0 pv e2e4 e7e5 g1f3
+(...)
 ```
 
 
@@ -73,8 +74,8 @@ Stop you instance and edit the characteritics.
 Add one or two GPU, up to 8 V100. Make sure you have 2 vcpus per GPU.
 You will need about 20Gb of memory. Make it 32gb to be confortable.
 
-*Careful: every GPU makes the instance considerably more expensive.*
-*Each V100 is billed about $2.5 per hour at the time of writing.*
+*Caution*: every GPU makes the instance *considerably more expensive.*
+Each V100 is billed about $2.5 per hour at the time of writing.
 
 See [the Google Gloud GPU pricing] (https://cloud.google.com/compute/gpus-pricing) for details.
 
@@ -83,8 +84,7 @@ See [the Google Gloud GPU pricing] (https://cloud.google.com/compute/gpus-pricin
 
 ## 5. Test your instance
 
-The `engine` script will automatically use your GPUs, if any.
-Here is Lc0 starting with one V100:
+The `engine` script will automatically use all your GPUs, (or fallback to CPU if none).
 
 ```
 $ ~/engine
@@ -108,18 +108,18 @@ info depth 22 seldepth 62 time 29845 nodes 1485568 score cp 11 nps 53922 tbhits 
 
 ## 6. Connect remotely to your engine from your laptop
 
-Although this is not required, it's highly recommended to setup a static address. 
-The static address is free, as long as it is used in a instance. 
-The instance can keep it's static address even if stopped.
+Although this is not required, it's highly recommended to setup a static address on the instance.
+The static address is free, as long as it is attached to an instance. 
+The instance is allowed to keep its static address freely, even stopped.
 
 ### 6.1 MacOS and Linux
 
 On you Mac or Linux box, create a forwarding script to your cloud instance.
 
 Create a new file script `remove_engine`. You will need:
-- your (possibly static) IP address
-- your account name
-- your ssh private key location
+- your (possibly static) IP address,
+- your account name,
+- your ssh identity.
 
 ``` 
 #!/bin/bash
@@ -127,7 +127,6 @@ ssh -i ~/.ssh/google-compute $frpays@35.221.231.255 /home/frpays/engine
 ```
 
 Make you script executable and test it.
-Here with two V100.
 
 ```
 $ chmod ug+rx remote_engine
@@ -170,7 +169,8 @@ http://komodochess.com/remote-engine.htm
 
 ### 7. Setup you remote engine in your favorite UCI client
 
-Select the `remove_engine` script that you created. The UCI engine will recognize it as a chess engine.
+Select the `remove_engine` script that you created.
+The UCI engine will recognize it as a chess engine.
 
 
 ### Appendix:  Installed software versions
