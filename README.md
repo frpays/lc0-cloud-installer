@@ -69,7 +69,7 @@ info depth 2 seldepth 3 time 2879 nodes 5 score cp 14 nps 2 tbhits 0 pv e2e4 e7e
 ```
 
 
-## 4. Add GPUs to you instance.
+## 4. Add GPU devices to you instance
 
 Stop you instance and edit its characteritics.
 Add one or two GPU, up to 8 V100. Make sure you have 2 vcpus per GPU.
