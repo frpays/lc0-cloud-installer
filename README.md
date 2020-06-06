@@ -1,6 +1,6 @@
 # Lc0 Google Cloud installer
 
-An up-to-date version of [Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Linux Ubuntu and take advantage of up to 8 GPUs. This installer is derived from the older [LC0 Google Cloud guide](http://lczero.org/dev/wiki/google-cloud-guide-lc0/).
+[Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Ubuntu and take advantage of up to 8 GPUs. This installer is derived from the older [LC0 Google Cloud guide](http://lczero.org/dev/wiki/google-cloud-guide-lc0/).
 
 ## 1. Setup a Google cloud account 
 
