@@ -79,6 +79,7 @@ You will need about 20Gb of memory. Make it 32gb to be confortable.
 Each V100 is billed about $2.5 per hour at the time of writing.
 
 See [the Google Gloud GPU pricing](https://cloud.google.com/compute/gpus-pricing) for details.
+Preemptive instances are less expensive, but are not suitable for the task as they can be stopped at any moment.
 
 **Don't forget to stop your instance when you finished!**
 
