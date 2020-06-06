@@ -11,12 +11,12 @@ Note that free trial accounts are offered free credits ($300 at the time of writ
 
 Create a new project and [install a project-wide ssh key in the metadata](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys?hl=en#project-wide).
 
-Create a new instance that will host the engine.
+Create a new compute engine instance that will host the chess engine.
 
 Keep it small during the installation:
 
 - 1 vcpu, 3.75Gb memory, (we will bump this later),
-- 20 Gb of disk minimum,
+- 20 Gb of disk,
 - Ubuntu 18.04LTS,
 - No GPU (for the moment).
 
