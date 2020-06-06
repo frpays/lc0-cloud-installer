@@ -10,17 +10,17 @@ GPU_COUNT=$(nvidia-smi --query-gpu=count --format=csv,noheader)
 
 case "$GPU_COUNT" in
 
-  1)
+	1*)
 	exec $LC0 -t 4 --weights=$WEIGHTS --backend=cudnn-fp16  --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
-  ;;
+	;;
 
-  2)
+	2*)
 	exec $LC0 -t 4 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
-  ;;
+	;;
 
-  *)
+	*)
 	exec $LC0 -t 4 --weights=$WEIGHTS --backend=eigen --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE$*
-  ;;
+	;;
 
 esac
 
