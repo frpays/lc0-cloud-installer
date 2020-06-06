@@ -3,7 +3,7 @@
 # Modified from http://lczero.org/dev/wiki/google-cloud-guide-lc0/
 
 
-install_cuda1()
+install_cuda()
 {
 	echo "Installing CUDA"
 	wget -nc https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
@@ -11,15 +11,7 @@ install_cuda1()
 	sudo dpkg -i cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 	sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 	sudo apt-get update
-  sudo apt-get install cuda
-}
-
-install_cuda2()
-{
-	sudo mkdir /usr/lib/nvidia
-	sudo apt-get install -y --fix-missing --no-install-recommends nvidia-384=384.111-0ubuntu1 libcuda1-384=384.111-0ubuntu1 nvidia-384-dev=384.111-0ubuntu1
-	sudo apt-get install -y --fix-missing --no-install-recommends cuda-cudart-9-0 cuda-cublas-9-0  cuda-core-9-0  cuda-cublas-dev-9-0 cuda-cudart-dev-9-0
-	cd /usr/local/ &&  sudo ln -s cuda-9.0 cuda
+  sudo apt-get install cuda-10.2
 }
 
 install_cudnn()
@@ -75,7 +67,7 @@ do
 
 	case $i in
 
-		cuda1|cuda2|cudnn|other|lc0|weights)
+		cuda|cudnn|other|lc0|weights)
     cd ~
 		install_$i
 		;;
