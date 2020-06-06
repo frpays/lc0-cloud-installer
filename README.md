@@ -50,8 +50,8 @@ Saving to: ‘256x20-t40-1541.pb.gz’
 CUDA and CUDNN are installed and Lc0 is built from the latest tag.
 The installer will also download a 256x20b network (256x20-t40-1541.pb.gz from https://lczero.org/play/networks/bestnets/).
 
-When the installer completed, you can optionaly test your engine.
-Without GPU, the engine will fallback to CPU.
+When the installer completes, you can optionaly test your engine.
+Note that without GPU, the engine will fallback to CPU.
 
 ```
 ~$ ./engine 
