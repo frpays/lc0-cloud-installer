@@ -1,13 +1,11 @@
 # Lc0 Google Cloud installer
 
-### This project explains how install Leela Chess Zero on Google cloud.
-
-The most up-to-date version of [Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Linux Ubuntu and take advantage of up to 8 GPUs.
+An up-to-date version of [Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Linux Ubuntu and take advantage of up to 8 GPUs. This installer is derived from the [LC0 Google Cloud guide](http://lczero.org/dev/wiki/google-cloud-guide-lc0/).
 
 ## 1. Setup a Google cloud account 
 
-Head to [Google Cloud](https://console.cloud.google.com/) and setup an account.
-New accounts are offered free credits.
+Visit [Google Cloud](https://console.cloud.google.com/) and setup an account.
+Note that new accounts are offered free credits.
 
 You will also need to setup a ssh key on your account.
 
