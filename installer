@@ -14,18 +14,19 @@ install_cuda()
 	sudo dpkg -i cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 	sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 	sudo apt-get update
-  sudo apt-get install -y cuda-10.2
+	sudo apt-get install -y cuda-10.2
+	rm -rf cuda cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 }
 
 install_cudnn()
 {
 	echo "Installing CUDNN"
-  wget -nc http://developer.download.nvidia.com/compute/redist/cudnn/v7.6.5/cudnn-10.2-linux-x64-v7.6.5.32.tgz
+	wget -nc http://developer.download.nvidia.com/compute/redist/cudnn/v7.6.5/cudnn-10.2-linux-x64-v7.6.5.32.tgz
 	tar -xzvf cudnn-10.2-linux-x64-v7.6.5.32.tgz
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include/cudnn.h
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64/
 	sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
-  rm -f cuda cudnn-10.2-linux-x64-v7.6.5.32.tgz
+	rm -rf cuda cudnn-10.2-linux-x64-v7.6.5.32.tgz
 	sudo nvidia-smi -pm 1
 }
 
@@ -35,7 +36,7 @@ install_other()
 	sudo apt-get install -y ninja-build libprotobuf-dev protobuf-compiler python3-pip
 	sudo pip3 install meson
 	sudo apt-get install gcc-6 g++-6 -y
-  sudo apt-get install clang-6.0 -y
+	sudo apt-get install clang-6.0 -y
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 }
 
@@ -53,11 +54,11 @@ install_lc0()
 
 install_weights()
 {
-  WEIGHTS="https://www.comp.nus.edu.sg/~sergio-v/t40/256x20/256x20-t40-1541.pb.gz"
-  mkdir -p weights 
-  cd weights
-  wget -nc $WEIGHTS
-  ln -sf 256x20-t40-1541.pb.gz default
+	WEIGHTS="https://www.comp.nus.edu.sg/~sergio-v/t40/256x20/256x20-t40-1541.pb.gz"
+	mkdir -p weights 
+	cd weights
+	wget -nc $WEIGHTS
+	ln -sf 256x20-t40-1541.pb.gz default
 }
 
 install_engine()
