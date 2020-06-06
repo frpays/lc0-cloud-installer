@@ -106,7 +106,7 @@ info depth 1 seldepth 2 time 2208 nodes 3 score cp 15 nps 272 tbhits 0 pv e2e4 e
 info depth 22 seldepth 62 time 29845 nodes 1485568 score cp 11 nps 53922 tbhits 0 pv e2e4 e7e5 g1f3 b8c6 f1b5 g8f6 e1g1 f6e4 d2d4 e4d6 b5c6 d7c6 d4e5 d6f5 d1d8 e8d8 b1c3 f8e7 h2h3 f5h4 f1d1 d8e8 f3h4 e7h4 g2g4 h7h5 f2f3 e8e7 c1f4 b7b6 g1g2 e7e6 a2a4 a7a5 c3e2 c6c5 f4g3 h4g3 g2g3 h5h4 g3f4 f7f6 e5f6 e6f6 e2c3
 ```
 
-## 6. Setup you engine remotely from you laptop. 
+## 6. Connect remotely to your engine from your laptop
 
 Although this is not required, it's highly recommended to setup a static address. 
 The static address is free, as long as it is used in a instance. 
