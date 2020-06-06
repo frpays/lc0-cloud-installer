@@ -77,7 +77,7 @@ You will need about 20Gb of memory. Make it 32gb to be confortable.
 *Caution*: every GPU makes the instance *considerably more expensive.*
 Each V100 is billed about $2.5 per hour at the time of writing.
 
-See [the Google Gloud GPU pricing] (https://cloud.google.com/compute/gpus-pricing) for details.
+See [the Google Gloud GPU pricing](https://cloud.google.com/compute/gpus-pricing) for details.
 
 **Don't forget to stop your instance when you finished!**
 
