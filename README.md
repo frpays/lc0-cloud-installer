@@ -7,12 +7,13 @@
 Visit [Google Cloud](https://console.cloud.google.com/) and setup an account.
 Note that free trial accounts are offered free credits ($300 at the time of writing).
 
-You will also need to setup a ssh key on your Google Cloud account.
-
-
 ## 2. Create a project and a new instance
 
-Setup a small instance during the installation:
+Create a new project and [install a project-wide ssh key in the metadata](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys?hl=en#project-wide).
+
+Create a new instance that will host the engine.
+
+Keep it small during the installation:
 
 - 1 vcpu, 3.75Gb memory, (we will bump this later),
 - 20 Gb of disk minimum,
