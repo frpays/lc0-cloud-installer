@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Modified from http://lczero.org/dev/wiki/google-cloud-guide-lc0/
+TOP=$(cd ${0%/*}; pwd)
 
+echo $TOP
+
+# Partially from http://lczero.org/dev/wiki/google-cloud-guide-lc0/
 
 install_cuda()
 {
@@ -57,19 +60,24 @@ install_weights()
   ln -sf 256x20-t40-1541.pb.gz default
 }
 
+install_engine()
+{
+  cp $TOP/engine ~
+}
+
 
 export PATH="$PATH:/usr/local/cuda/bin"
 
 LIST=$*
 
-[ "$LIST" ] || LIST="cuda cudnn other lc0 weights"
+[ "$LIST" ] || LIST="cuda cudnn other lc0 weights engine"
 
 for i in $LIST
 do
 
 	case $i in
 
-		cuda|cudnn|other|lc0|weights)
+		cuda|cudnn|other|lc0|weights|engine)
     cd ~
 		install_$i
 		;;

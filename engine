@@ -3,22 +3,24 @@
 
 LC0=~/lc0/lc0
 WEIGHTS=~/weights/default
+CACHE_SIZE=2000000
+BATCH_SIZE=512
 
-BACKEND=$1; shift
+GPU_COUNT=$(nvidia-smi --query-gpu=count --format=csv,noheader)
 
-case "$BACKEND" in
+case "$GPU_COUNT" in
 
-gpu|gpu-1)
-exec $LC0 -t 4 --weights=$WEIGHTS --backend=cudnn-fp16  --nncache=6000000 --minibatch-size=512 $*
-;;
+  1)
+	exec $LC0 -t 4 --weights=$WEIGHTS --backend=cudnn-fp16  --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+  ;;
 
-gpu-2)
-exec $LC0 -t 4 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1)' --nncache=6000000 --minibatch-size=512 $*
-;;
+  2)
+	exec $LC0 -t 4 --weights=$WEIGHTS --backend=multiplexing --backend-opts='(backend=cudnn-fp16,gpu=0),(backend=cudnn-fp16,gpu=1)' --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
+  ;;
 
-*)
-exec $LC0 -t 4 --weights=$WEIGHTS --backend=eigen $*
-;;
+  *)
+	exec $LC0 -t 4 --weights=$WEIGHTS --backend=eigen --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE$*
+  ;;
 
 esac
 
