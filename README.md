@@ -1,6 +1,6 @@
 # Lc0 Google Cloud installer
 
-[Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Ubuntu and take advantage of up to 8 GPUs. This installer is derived/upgraded from the older [LC0 Google Cloud guide](http://lczero.org/dev/wiki/google-cloud-guide-lc0/) to support Leela 0.25.
+[Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Ubuntu and take advantage of up to 8 GPUs. This installer is derived from the older [LC0 Google Cloud guide](http://lczero.org/dev/wiki/google-cloud-guide-lc0/) to support Leela 0.25.
 
 ## 1. Setup a Google cloud account 
 
