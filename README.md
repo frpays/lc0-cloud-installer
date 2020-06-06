@@ -2,7 +2,7 @@
 
 ### This project explains how install Leela Chess Zero on Google cloud.
 
-The most up-to-date version will be installed on Linux Ubuntu and take advantage of up to 8 GPUs.
+The most up-to-date version of [Lc0](https://github.com/LeelaChessZero/lc0) will be installed on Linux Ubuntu and take advantage of up to 8 GPUs.
 
 ## 1. Setup a Google cloud account 
 
