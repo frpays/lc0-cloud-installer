@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Script example for remote engine communication
+
+IDENTITY=~/.ssh/google-compute
+ADDRESS=35.239.239.255
+LOGIN=frpays
+
+ssh -i $IDENTITY $LOGIN@$ADDRESS /home/$LOGIN/engine
+
+
