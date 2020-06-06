@@ -72,8 +72,10 @@ info depth 2 seldepth 3 time 2879 nodes 5 score cp 14 nps 2 tbhits 0 pv e2e4 e7e
 ## 4. Add GPU devices to your instance
 
 Stop you instance and edit the characteritics.
-Add one or two GPU, up to 8 V100. Make sure you have 2 vcpus per GPU.
-You will need about 20Gb of memory. Make it 32gb to be confortable.
+
+* Add as many GPU you want, up to 8 V100. You will need to increase quotas.
+* You will have to increase the number of vcpus. Make sure you have 2 vcpus per GPU.
+* You will need about 20Gb of memory. Make it 32gb to be confortable.
 
 *Caution*: every GPU makes the instance *considerably more expensive.*
 Each V100 is billed about $2.5 per hour at the time of writing.
