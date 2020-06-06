@@ -6,11 +6,12 @@
 install_cuda1()
 {
 	echo "Installing CUDA"
-	wget -nc http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-10-2_10.2.89-1_amd64.deb
-	sudo apt-get install -y --fix-missing --no-install-recommends dirmngr gnupg-curl
-	sudo dpkg -i cuda-10-2_10.2.89-1_amd64.deb
+	wget -nc https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
+	sudo apt-get install -y --fix-missing --no-install-recommends dirmngr
+	sudo dpkg -i cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
 	sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 	sudo apt-get update
+  sudo apt-get install cuda
 }
 
 install_cuda2()
