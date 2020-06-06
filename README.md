@@ -2,7 +2,7 @@
 
 ### This project explains how install Leela Chess Zero on Google cloud.
 
-You will able to install Leela one CPU or with 1 or 2 GPUs up to V100.
+The most up-to-date version will be installed on Linux Ubuntu and take advantage of up to 8 GPUs.
 
 ## 1. Setup a Google cloud account 
 
@@ -115,7 +115,7 @@ Create a new file script `remove_engine`. You will need:
 
 ``` 
 #!/bin/bash
-ssh -i ~/.ssh/google-compute $frpays@35.221.231.255
+ssh -i ~/.ssh/google-compute $frpays@35.221.231.255 /home/frpays/engine
 ```
 
 Make you script executable and test it.
@@ -164,6 +164,13 @@ http://komodochess.com/remote-engine.htm
 
 You will need to select the `remove_engine` script that you created.
 
+
+### 8. Installed software versions
+
+Ubuntu 18.04LTS
+CUDA 10.2
+Cudnn 7.6.5
+Leela v0.25.1
 
 
 
