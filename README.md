@@ -25,9 +25,9 @@ Start you instance and login.
 *Note:* You may be billed for this instance (about $0.034 hourly).
 
 
-## 3. Install LC0 using the provided installer
+## 3. Launch the provided installer
 
-Clone the provided installer and launch it.
+The installation will take about 15 minutes. 
 
 ```
 $ git clone https://github.com/frpays/lc0-cloud-installer.git
@@ -47,7 +47,7 @@ Saving to: ‘256x20-t40-1541.pb.gz’
 
 2020-06-06 17:35:33 (471 KB/s) - ‘256x20-t40-1541.pb.gz’ saved [44289015/44289015]
 ````
-This will take about 15 minutes. CUDA and CUDNN are installed and Lc0 is built from the latest tag.
+CUDA and CUDNN are installed and Lc0 is built from the latest tag.
 The installer will also download a 256x20b network (256x20-t40-1541.pb.gz from https://lczero.org/play/networks/bestnets/).
 
 When the installer completed, you can optionaly test your engine.
