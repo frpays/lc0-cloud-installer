@@ -29,9 +29,21 @@ $ git clone https://github.com/frpays/lc0-cloud-installer.git
 $ cd lc0-cloud-installer
 
 $ ./installer
+
+Installing CUDA
+--2020-06-06 16:58:00--  https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.2.89-1_amd64.deb
+Resolving developer.download.nvidia.com (developer.download.nvidia.com)... 152.195.19.142
+Connecting to developer.download.nvidia.com (developer.download.nvidia.com)|152.195.19.142|:443... connected.
+(...)
+Saving to: ‘256x20-t40-1541.pb.gz’
+
+256x20-t40-1541.pb.gz           100%[=====================================================>]  42.24M   483KB/s    in 92s     
+
+2020-06-06 17:35:33 (471 KB/s) - ‘256x20-t40-1541.pb.gz’ saved [44289015/44289015]
 ````
-This will take a few minutes while CUDA, CUDNN is installed and LC0 is built from the latest tag.
-It will also install a 256x20b network.
+This will take about 15 minutes while CUDA, CUDNN is installed and LC0 is built from the latest tag.
+
+It will also install a 256x20b network (256x20-t40-1541.pb.gz from https://lczero.org/play/networks/bestnets/).
 
 At the end of the intaller you can optionaly test your engine.
 Without GPUs, the engine will fallback to CPU.
