@@ -1,4 +1,4 @@
-# LCZero Google Cloud installer
+# Lc0 Google Cloud installer
 
 ### This project explains how install Leela Chess Zero on Google cloud.
 
@@ -48,7 +48,7 @@ Saving to: ‘256x20-t40-1541.pb.gz’
 
 2020-06-06 17:35:33 (471 KB/s) - ‘256x20-t40-1541.pb.gz’ saved [44289015/44289015]
 ````
-This will take about 15 minutes. CUDA and CUDNN are installed and LC0 is built from the latest tag.
+This will take about 15 minutes. CUDA and CUDNN are installed and Lc0 is built from the latest tag.
 The installer will also download a 256x20b network (256x20-t40-1541.pb.gz from https://lczero.org/play/networks/bestnets/).
 
 When the installer completed, you can optionaly test your engine.
