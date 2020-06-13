@@ -26,7 +26,7 @@ case "$GPU_COUNT" in
   ;;
 
 	*)
-	exec $LC0 --weights=$WEIGHTS --backend=eigen --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE$*
+	exec $LC0 --weights=$WEIGHTS --backend=eigen --nncache=$CACHE_SIZE --minibatch-size=$BATCH_SIZE $*
 	;;
 
 esac
