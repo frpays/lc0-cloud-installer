@@ -33,7 +33,7 @@ install_cudnn()
 install_other()
 {
 	echo "Installing other"
-  sudo apt-get install libopenblas-dev
+  sudo apt-get install -y libopenblas-dev
 	sudo apt-get install -y ninja-build libprotobuf-dev protobuf-compiler python3-pip
 	sudo pip3 install meson
 	sudo apt-get install gcc-6 g++-6 -y
